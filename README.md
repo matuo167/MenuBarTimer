@@ -29,3 +29,13 @@ open build/MenuBarTimer.app
 ```
 
 アプリ本体は `MenuBarTimer/build/MenuBarTimer.app` に作成されます。
+
+## アプリ一覧に追加
+
+```sh
+cd "/Users/k22125kk/Documents/New project/MenuBarTimer"
+./scripts/install_to_applications.sh
+open "$HOME/Applications"
+```
+
+`~/Applications/MenuBarTimer.app` にインストールされ、Launchpadやアプリ一覧から起動しやすくなります。
