@@ -13,5 +13,7 @@ cd "$PROJECT_DIR"
 
 mkdir -p "$APPLICATIONS_DIR"
 ditto "$SOURCE_APP" "$TARGET_APP"
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "$TARGET_APP" >/dev/null 2>&1 || true
+rm -rf "$SOURCE_APP"
 
 echo "Installed $TARGET_APP"
