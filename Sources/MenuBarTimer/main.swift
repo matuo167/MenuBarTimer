@@ -553,14 +553,18 @@ final class StatusBarController: NSObject {
         statusItem.length = NSStatusItem.variableLength
     }
 
-    @objc private func togglePopover() {
+    func showPopover() {
         guard let button = statusItem.button else { return }
 
+        popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
+        popover.contentViewController?.view.window?.makeKey()
+    }
+
+    @objc private func togglePopover() {
         if popover.isShown {
             popover.performClose(nil)
         } else {
-            popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
-            popover.contentViewController?.view.window?.makeKey()
+            showPopover()
         }
     }
 }
@@ -571,8 +575,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var statusBarController: StatusBarController?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        NSApplication.shared.setActivationPolicy(.accessory)
+        NSApplication.shared.setActivationPolicy(.regular)
         statusBarController = StatusBarController(model: model)
+    }
+
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        statusBarController?.showPopover()
+        return true
     }
 }
 

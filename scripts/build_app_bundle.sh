@@ -47,7 +47,7 @@ cat > "$CONTENTS_DIR/Info.plist" <<'PLIST'
   <key>LSMinimumSystemVersion</key>
   <string>13.0</string>
   <key>LSUIElement</key>
-  <true/>
+  <false/>
 </dict>
 </plist>
 PLIST

@@ -18,7 +18,7 @@ cd "/Users/k22125kk/Documents/New project/MenuBarTimer"
 swift run MenuBarTimer
 ```
 
-起動するとDockには表示されず、メニューバーにタイマーアイコンが出ます。
+起動するとDockとメニューバーにタイマーアイコンが出ます。
 
 ## `.app`として作成
 
