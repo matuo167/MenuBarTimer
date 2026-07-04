@@ -25,10 +25,9 @@ swift run MenuBarTimer
 ```sh
 cd "/Users/k22125kk/Documents/New project/MenuBarTimer"
 ./scripts/build_app_bundle.sh
-open build/MenuBarTimer.app
 ```
 
-アプリ本体は `MenuBarTimer/build/MenuBarTimer.app` に作成されます。
+アプリ本体は `MenuBarTimer/build/MenuBarTimer.app` に作成されます。これは動作確認用のビルド成果物です。普段使う場合は次の「アプリ一覧に追加」を使ってください。
 
 ## アプリ一覧に追加
 
